@@ -23,8 +23,9 @@ function showMessage($message, $errormsg = false) {
 
 function showAdminMessages() {
 
-	$link = '<a href="http://hospedagem.brasa.art.br/" target="_blank">Minha Hospedagem</a>';
-    showMessage("Estamos construindo a nova vers&atilde;o da Hospedagem da BRASA. Acesse a página $link ou escreva para suporte@brasa.art.br para obter ajuda.
+	$link = '<a href="http://hospedagem.brasa.art.br/" target="_blank">Sua Hospedagem</a>';
+	$linkcontato = '<a href="http://hospedagem.brasa.art.br/contato-de-suporte/" target="_blank">Contato</a>';
+    showMessage("Estamos construindo a nova vers&atilde;o da Hospedagem da BRASA. Acesse a página $link ou entre em $linkcontato para obter ajuda.
 	<!-- Mensagem de alerta no Painel Administrativo de todos os sites da Nuvem da Brasa -->", true);
 }
 

@@ -33,17 +33,16 @@ add_action('admin_notices', 'showAdminMessages');
 
 // FILTRO PARA TROCAR CERTAS PALAVRAS POR LINKS
 
-function replace_wordswithlinks($text){
-	$replace = array(
+// function replace_wordswithlinks($text){
+//	$replace = array(
 	// 'WORD TO REPLACE' => 'REPLACE WORD WITH THIS'
-	'WordPress' => '<a href="http://brasa.art.br/sobre-wordpress/">WordPress</a>'
-	);
-	$text = str_replace(array_keys($replace), $replace, $text);
-	return $text;
-}
-
-add_filter('the_content', 'replace_wordswithlinks');
-add_filter('the_excerpt', 'replace_wordswithlinks');
+//	'WordPress' => '<a href="http://brasa.art.br/sobre-wordpress/">WordPress</a>'
+//	);
+//	$text = str_replace(array_keys($replace), $replace, $text);
+//	return $text;
+//}
+// add_filter('the_content', 'replace_wordswithlinks');
+// add_filter('the_excerpt', 'replace_wordswithlinks');
 
 // Personaliza o rodapé do admin
 function custom_admin_footer() {

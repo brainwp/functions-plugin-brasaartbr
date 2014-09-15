@@ -9,7 +9,7 @@ Author URI: brasa.art.br
 */
 
 
-// Mostrar Mensagem de urg�ncia
+// Mostrar Mensagens Administrativas
 
 function showMessage($message, $errormsg = false) {
 	if ($errormsg) {
@@ -45,9 +45,8 @@ add_action('admin_notices', 'showAdminMessages');
 
 // Personaliza o rodapé do admin
 function custom_admin_footer() {
-        echo 'Desenvolvido com <a href=http://wordpress.org/>WordPress</a> por <a href=http://www.brasa.art.br>Brasa Design e Tecnologia</a>.';
+        echo 'Desenvolvido com <a href=http://br.wordpress.org/>WordPress</a> por <a href=http://www.brasa.art.br>Brasa Design e Tecnologia</a>.';
 }
 add_filter('admin_footer_text', 'custom_admin_footer');
-
 
 ?>

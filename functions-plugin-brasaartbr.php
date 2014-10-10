@@ -49,4 +49,8 @@ function custom_admin_footer() {
 }
 add_filter('admin_footer_text', 'custom_admin_footer');
 
+require_once plugin_dir_path( __FILE__ ) . 'inc/class-options.php';
+require plugin_dir_path( __FILE__ ) . 'inc/options.php';
+require plugin_dir_path( __FILE__ ) . 'inc/dashboard.php';
+
 ?>

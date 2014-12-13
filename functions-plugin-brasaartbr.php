@@ -49,6 +49,15 @@ function custom_admin_footer() {
 }
 add_filter('admin_footer_text', 'custom_admin_footer');
 
+// Função para colocar o WP em modo de manutenção
+
+// function enable_maintenance_mode() {
+// if ( !current_user_can( 'edit_themes' ) || !is_user_logged_in() ) {
+// wp_die('Nuvem Brasa em manutenção, volte daqui alguns minutos por favor.');
+// }
+// }
+// add_action('get_header', 'enable_maintenance_mode');
+
 require_once plugin_dir_path( __FILE__ ) . 'inc/class-options.php';
 require plugin_dir_path( __FILE__ ) . 'inc/options.php';
 require plugin_dir_path( __FILE__ ) . 'inc/dashboard.php';

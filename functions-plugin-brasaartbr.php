@@ -61,5 +61,29 @@ add_filter('admin_footer_text', 'custom_admin_footer');
 require_once plugin_dir_path( __FILE__ ) . 'inc/class-options.php';
 require plugin_dir_path( __FILE__ ) . 'inc/options.php';
 require plugin_dir_path( __FILE__ ) . 'inc/dashboard.php';
+function brasa_add_theme_caps() {
+    // gets the author role
+    $role = get_role( 'editor' );
 
+    // This only works, because it accesses the class instance.
+    // would allow the author to edit others' posts for current theme only
+    $role->add_cap( 'edit_theme_options' );
+    $role->add_cap( 'manage_options' );
+ }
+add_action( 'admin_init', 'brasa_add_theme_caps');
+function brasa_get_user_role() {
+    global $current_user;
+
+    $user_roles = $current_user->roles;
+    $user_role = array_shift($user_roles);
+
+    return $user_role;
+}
+add_action( 'admin_menu', 'brasa_adjust_the_wp_menu', 999 );
+function brasa_adjust_the_wp_menu() {
+	if(brasa_get_user_role() == 'editor'){
+		remove_submenu_page( 'options-general.php', 'options-media.php' );
+		remove_submenu_page( 'options-general.php', 'options-permalink.php' );
+	}
+}
 ?>

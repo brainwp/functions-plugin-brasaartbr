@@ -82,6 +82,7 @@ function brasa_get_user_role() {
 add_action( 'admin_menu', 'brasa_adjust_the_wp_menu', 999 );
 function brasa_adjust_the_wp_menu() {
 	if(brasa_get_user_role() == 'editor'){
+		remove_menu_page( 'tools.php' );
 		remove_submenu_page( 'options-general.php', 'options-media.php' );
 		remove_submenu_page( 'options-general.php', 'options-permalink.php' );
 	}
